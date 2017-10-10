@@ -23,8 +23,8 @@ public class PortfolioStocksBean implements Serializable {
 		return activeStocks;
 	}
 
-	public void setActiveStocks(ArrayList<String> activeStocks) {
-		this.activeStocks = activeStocks;
+	public void setActiveStocks(ArrayList<String> stocks) {
+		activeStocks = stocks;
 	}
 	
 	public void addActiveStock(String stockSymbol) {

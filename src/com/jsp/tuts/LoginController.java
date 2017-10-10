@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import app.models.User;
+import app.models.UserBean;
 
 /**
  * Servlet implementation class LoginController
@@ -48,7 +48,7 @@ public class LoginController extends HttpServlet {
 		}else 
 		{
 			session.setAttribute("isUserLoggedIn", true);
-			User loggedInUser = new User(username, new Date());
+			UserBean loggedInUser = new UserBean(username, new Date());
 			session.setAttribute("loggedInUser", loggedInUser);
 		}
 		response.sendRedirect("./dashboard.jsp");

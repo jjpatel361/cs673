@@ -1,7 +1,7 @@
-<div class="col-md-3">
+
 	<form method="post" action="AddStockController">
 	
-	<div class="panel panel-default">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<div class="panel-title">Add Stock</div>
 		</div>
@@ -28,4 +28,3 @@
 		</div>
 	</div>
 	</form>
-</div>

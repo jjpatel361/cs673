@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList" %>
-<%@page import="app.models.User"%>
+<%@page import="app.models.UserBean"%>
 <%@page import="app.models.PortfolioStocksBean" %>
 <%@taglib prefix="layout" tagdir="/WEB-INF/tags/layout" %>
 <jsp:useBean id = "portfolioStockBean" class = "app.models.PortfolioStocksBean" /> 
@@ -19,8 +19,10 @@
 
 <div class="container mt-50">
 	<div class="row">
+	
+	<!-- -TODO: Create a separte partial -->
 		<div class="col-md-4">
-			 <div class="panel panel-default">
+			 <div class="panel panel-primary">
    				<div class="panel-heading">
 					<div class="panel-title">
 						Overview
@@ -33,7 +35,6 @@
     					No Stock in portfolio
     				</c:if>
     				<c:if test="${stockList.size() > 0}">
-    					<p>Stocks in Portfolio ${stockList.size()}</p>	
     					 <ul class="list-group">
 						  
 						  	<c:forEach begin="0" end="${stockList.size()-1}" var="i">
@@ -46,18 +47,19 @@
     				</c:if>
     			</div>
     			<div class="panel-footer">
-    				<a class="btn btn-primary" href="AddStock.jsp">
-    					Add Stock
-    				</a>
+    				<p>Stocks in Portfolio ${stockList.size()}</p>	
     			</div>
   			</div>
 		</div>
 	
 	<!-- Add stock form is here -->
+	<div class="col-md-4">
+		<jsp:include page="AddStockPartial.jsp"></jsp:include>
+	</div>
 	
-	<jsp:include page="AddStockPartial.jsp"></jsp:include>
-	
-	
+	<div class="col-md-4">
+		<jsp:include page="AddTransactionPartial.jsp"></jsp:include>
+	</div>
 	</div>
 </div>
 
